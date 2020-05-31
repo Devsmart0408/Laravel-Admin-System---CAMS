@@ -1,0 +1,6 @@
+a.btn:not([href]):not([tabindex]):hover, a.btn:not([href]):not([tabindex]):focus {
+    color: white;
+  }
+  a.btn:not([href]):not([tabindex]) {
+    color: white;
+  }

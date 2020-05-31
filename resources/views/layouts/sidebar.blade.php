@@ -12,44 +12,66 @@
                    <li class="menu-title">Navigation</li>
 
                    <li>
-                       <a href="javascript: void(0);" class="waves-effect">
+                       <a href="{{url('/home')}}" class="waves-effect">
                            <i class="remixicon-dashboard-line"></i>
-                           <span class="badge badge-success badge-pill float-right">2</span>
-                           <span> Dashboards </span>
+                           <span> Dashboard </span>
                        </a>
-                       <ul class="nav-second-level" aria-expanded="false">
-                           <li>
-                               <a href="">Dashboard 1</a>
-                           </li>
+                   </li>
+                    {{-- @can('all')
                            <li>
                                <a href="dashboard-2">Dashboard 2</a>
                            </li>
-                       </ul>
-                   </li>
-
-                   <li>
-                       <a href="javascript: void(0);" class="waves-effect">
+                           @endcan --}}
+                   <li class="{{ request()->is('customers/*') || request()->is('cases/*') ? 'mm-active' : '' }}">
+                       <a href="javascript: void(0);" class="waves-effect" aria-expanded="false">
                            <i class="remixicon-folder-add-line"></i>
-                           <span> Multi Level </span>
+                           <span>Currency</span>
                            <span class="menu-arrow"></span>
                        </a>
                        <ul class="nav-second-level nav" aria-expanded="false">
                            <li>
-                               <a href="javascript: void(0);">Level 1.1</a>
+                               <a href="{{url('/customers')}}" class="waves-effect {{ request()->is('customers/*') ? 'active' : '' }}">
+                                    <span>Customers</span>
+                               </a>
                            </li>
                            <li>
-                               <a href="javascript: void(0);" aria-expanded="false">Level 1.2
-                                   <span class="menu-arrow"></span>
-                               </a>
-                               <ul class="nav-third-level nav" aria-expanded="false">
-                                   <li>
-                                       <a href="javascript: void(0);">Level 2.1</a>
-                                   </li>
-                                   <li>
-                                       <a href="javascript: void(0);">Level 2.2</a>
-                                   </li>
-                               </ul>
-                           </li>
+                                <a href="{{url('/cases')}}" class="waves-effect {{ request()->is('cases/*') ? 'active' : '' }}">
+                                    <span>Case</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{url('/currency')}}" class="waves-effect">
+                                    <span>Currency</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{url('/transaction')}}" class="waves-effect">
+                                    <span>Transaction</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{url('/profit')}}" class="waves-effect">
+                                    <span>Profit</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{url('/history')}}" class="waves-effect">
+                                    <span>History</span>
+                                </a>
+                            </li>
+                            {{-- <li>
+                                <a href="javascript: void(0);" aria-expanded="false">Level 1.2
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-third-level nav" aria-expanded="false">
+                                    <li>
+                                        <a href="javascript: void(0);">Level 2.1</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0);">Level 2.2</a>
+                                    </li>
+                                </ul>
+                            </li> --}}
                        </ul>
                    </li>
                </ul>

@@ -22,7 +22,7 @@
                         @endif
 
                         <form action="{{ route('password.email') }}" method="post">
-                            @csrf
+                            @   
                             <div class="form-group mb-3">
                                 <label for="emailaddress">Email address</label>
                                 <input class="form-control @if($errors->has('email')) is-invalid @endif" name="email" type="email" id="emailaddress" placeholder="Enter your email">

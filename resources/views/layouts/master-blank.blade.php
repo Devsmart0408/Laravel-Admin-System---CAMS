@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8" />
     <title>Minton - Responsive Admin Dashboard Template</title>
@@ -15,10 +14,8 @@
         }
     </style>
 </head>
-
 <body>
     @yield('content')
     @include('layouts.footer-script')
 </body>
-
 </html>

@@ -21,5 +21,19 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('pages-logout', 'DashboardController@logout');
     Route::get('home', 'DashboardController@index');
+    
+    Route::get('customers', 'CustomerController@index');
+    Route::get('cases', 'CasesController@index');
+    Route::get('currency', 'CurrencyController@index');
+    Route::get('transactions', 'TransactionController@index');
+    
+    Route::resource('customers','CustomerController');
+    Route::resource('cases','CasesController');
+    Route::resource('currency','CurrencyController');
+    Route::resource('transactions','TransactionController');
+
     Route::get('{any}', 'MintonController@index');
+
+
 });
+

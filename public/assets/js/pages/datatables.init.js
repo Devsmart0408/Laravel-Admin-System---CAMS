@@ -115,8 +115,14 @@ $(document).ready(function () {
   }); //Buttons examples
 
   var table = $('#datatable-buttons').DataTable({
-    lengthChange: false,
-    buttons: ['copy', 'print', 'pdf'],
+    lengthChange: true,
+    // scrollX:        true,
+    // scrollCollapse: true,
+    // fixedColumns:   {
+    //     // leftColumns: 1,
+    //     rightColumns: 1
+    // },
+    buttons: ['copy', 'print', 'csv','pdf'],
     "language": {
       "paginate": {
         "previous": "<i class='mdi mdi-chevron-left'>",

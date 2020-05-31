@@ -12,7 +12,7 @@
 
 </head>
 
-<body>
+<body class="left-side-menu-dark">
 
   <div id="if_need_loader" style="display:none;">
     <div id="preloader">

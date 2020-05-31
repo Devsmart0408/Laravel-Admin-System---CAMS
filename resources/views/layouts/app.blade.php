@@ -17,7 +17,7 @@
     </style>
 </head>
 
-<body>
+<body class="left-side-menu-dark">
     @yield('content')
     @include('layouts.footer-script')
 </body>
