@@ -38,23 +38,22 @@
             <p class="text-muted font-13 mb-4">
                 Currency management
             </p>
-            @if ($count == 0)
-                <div class="mb-2">
-                    <div class="row">
-                        <div class="col-12 text-sm-center form-inline">
-                            <div class="form-group mr-2">
-                                <a id="demo-btn-addrow" href="{{ route('currency.create') }}" class="btn btn-primary"><i class="mdi mdi-plus-circle mr-2"></i> Add Currency</a>
-                            </div>
+            <div class="mb-2">
+                <div class="row">
+                    <div class="col-12 text-sm-center form-inline">
+                        <div class="form-group mr-2">
+                            <a id="demo-btn-addrow" href="{{ route('currency.create') }}" class="btn btn-primary"><i class="mdi mdi-plus-circle mr-2"></i> Add Currency</a>
                         </div>
                     </div>
-                </div>                
-            @endif
+                </div>
+            </div>                
 
-            <table class="table table-striped dt-responsive nowrap">
+            <table id="datatable-buttons" class="table table-striped dt-responsive nowrap">
                 <thead>
                     <tr>
                         <th data-sortable="false"></th>
                         <th data-sortable="false">Actions</th>
+                        <th>Flag</th>
                         <th>Currency Name</th>
                         <th>Currency Code</th>
                         <th>Buy Code</th>
@@ -68,6 +67,10 @@
                         <th>Buy Rate Limit To</th>
                         <th>Sell Rate Limit From</th>
                         <th>Sell Rate Limit To</th>
+                        <th>Buy/Sell Amount Decimal Limit</th>
+                        <th>Average Rate Decimal Limit</th>
+                        <th>Balance Decimal Limit</th>
+                        <th>Last Average Rate Decimal Limit</th>
                         <th>Date Of Creation</th>
                         <th>Last Edit</th>
                     </tr>
@@ -84,6 +87,7 @@
                             <button type="submit" class="btn btn-danger waves-effect waves-light">Delete</button>
                             </form>
                         </td>
+                        <td><img src="{{ URL::to('/') }}/images/flag/{{ $item->flag_img }}" class="avatar-sm img-thumbnail"/></td>
                         <td>{{$item->name}}</td>
                         <td>{{$item->code}}</td>
                         <td>{{$item->buy_code}}</td>
@@ -96,6 +100,11 @@
                         <td>{{$item->buy_rate_from}}</td>
                         <td>{{$item->buy_rate_to}}</td>
                         <td>{{$item->sell_rate_from}}</td>
+                        <td>{{$item->sell_rate_to}}</td>
+                        <td>{{$item->bs_amount_dec_limit}}</td>
+                        <td>{{$item->avg_rate_dec_limit}}</td>
+                        <td>{{$item->balance_dec_limit}}</td>
+                        <td>{{$item->last_avg_rate_dec_limit}}</td>
                         <td>{{$item->created_at}}</td>
                         <td>{{$item->updated_at}}</td>
                     </tr>

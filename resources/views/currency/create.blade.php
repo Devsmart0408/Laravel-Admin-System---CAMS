@@ -36,7 +36,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <form method="post" action="{{route('currency.store')}}">
+                <form method="post" action="{{route('currency.store')}}" enctype="multipart/form-data">
                     @csrf
                 <div class="card-box">
                     <h4 class="card-title">Currency Information</h4>
@@ -150,6 +150,48 @@
                             @if($errors->has('calc_type'))
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $errors->first('calc_type') }}</strong>
+                            </span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label for="buy_rate_from" class="col-form-label">Buy Rate From</label>
+                            <input class="form-control @if($errors->has('buy_rate_from')) is-invalid @endif"
+                                    type="number" step="0.00001" name="buy_rate_from" id="buy_rate_from" value="{{ old('buy_rate_from') }}" placeholder="Buy Rate From" />
+                            @if($errors->has('buy_rate_from'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('buy_rate_from') }}</strong>
+                            </span>
+                            @endif
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="buy_rate_to" class="col-form-label">Buy Rate To</label>
+                            <input class="form-control @if($errors->has('buy_rate_to')) is-invalid @endif"
+                                    type="number" step="0.00001" name="buy_rate_to" id="buy_rate_to" value="{{ old('buy_rate_to') }}" placeholder="Buy Rate To" />
+                            @if($errors->has('buy_rate_to'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('buy_rate_to') }}</strong>
+                            </span>
+                            @endif
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="sell_rate_from" class="col-form-label">Sell Rate From</label>
+                            <input class="form-control @if($errors->has('sell_rate_from')) is-invalid @endif"
+                                    type="number" step="0.00001" name="sell_rate_from" id="sell_rate_from" value="{{ old('sell_rate_from') }}" placeholder="Sell Rate From" />
+                            @if($errors->has('sell_rate_from'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('sell_rate_from') }}</strong>
+                            </span>
+                            @endif
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="sell_rate_to" class="col-form-label">Sell Rate To</label>
+                            <input class="form-control @if($errors->has('sell_rate_to')) is-invalid @endif"
+                                    type="number" step="0.00001" name="sell_rate_to" id="sell_rate_to" value="{{ old('sell_rate_to') }}" placeholder="Sell Rate To" />
+                            @if($errors->has('sell_rate_to'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('sell_rate_to') }}</strong>
                             </span>
                             @endif
                         </div>

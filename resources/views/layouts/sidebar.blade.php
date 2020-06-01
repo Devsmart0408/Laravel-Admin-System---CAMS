@@ -22,7 +22,9 @@
                                <a href="dashboard-2">Dashboard 2</a>
                            </li>
                            @endcan --}}
-                   <li class="{{ request()->is('customers/*') || request()->is('cases/*') ? 'mm-active' : '' }}">
+                   <li class="{{ request()->is('customers/*') 
+                                || request()->is('cases/*')
+                                || request()->is('currency/*') ? 'mm-active' : '' }}">
                        <a href="javascript: void(0);" class="waves-effect" aria-expanded="false">
                            <i class="remixicon-folder-add-line"></i>
                            <span>Currency</span>
